@@ -1,0 +1,17 @@
+{
+  "name": "merge",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "concurrently \"cd server && bun run dev\" \"cd client && bun run dev\"",
+    "client": "cd client && bun run dev",
+    "server": "cd server && bun run dev",
+    "install:all": "bun install && cd client && bun install && cd ../server && bun install"
+  },
+  "devDependencies": {
+    "concurrently": "latest"
+  }
+}
